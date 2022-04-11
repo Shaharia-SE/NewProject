@@ -5,9 +5,14 @@
 {% endfor %}
 
 {% if movie_objects_previous %}
-    <a href="">Previous</a>
+    <a href="?page=1">First</a>
+
+    <a href="?page={{ movie_objects.previous_page_number }}">Previous</a>
 {% endif %}
+
+Page: {{ movie_objects.number }} of {{ movie_objects.paginator.num_pages }}
 {% if movie_objects.has_next %}
 
-    <a href="">Next</a>
+    <a href="?page={{ movie_objects.previous_page_number }}">Next</a>
+    <a href="?page={{ movie_objects.paginator.num_pages }}">Last</a>
 {% endif %}
