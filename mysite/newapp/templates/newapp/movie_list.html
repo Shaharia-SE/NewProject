@@ -1,0 +1,13 @@
+{% for movie_item in movie_objects %}
+    {{ movie_item.name }}
+    </br>
+
+{% endfor %}
+
+{% if movie_objects_previous %}
+    <a href="">Previous</a>
+{% endif %}
+{% if movie_objects.has_next %}
+
+    <a href="">Next</a>
+{% endif %}
